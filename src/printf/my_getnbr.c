@@ -19,7 +19,7 @@ int	my_getnbr(char *str)
         i++;
     while (str[i] != '\0') {
         if ((str[i] < '0' || str[i] > '9'))
-            write(1, "There must be only numbers in the string", 40);
+            return (84);
         n = n + str[i] - 48;
         n = n * 10;
         i++;
