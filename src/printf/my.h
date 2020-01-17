@@ -8,6 +8,18 @@
 #ifndef MY_H_
 #define MY_H_
 #include <stdarg.h>
+typedef struct s_data t_data;
+struct s_data {
+    int size;
+    int params;
+    int matches;
+    int Lines;
+    int save;
+    char *buffer;
+    char *buffer2;
+    int *tab;
+    int save_2;
+};
 
 //  EVAL_EXPR.C
 int eval_expr(char const *str);
@@ -52,5 +64,12 @@ int my_printf2(int *i, va_list paramsinfos, char const * format, ...);
 int my_put_hexa_min(unsigned nbr);
 int my_put_binary(unsigned int nbr);
 void info_file(char *filepath);
+int error_management(t_data *cordonnee);
+int interaction2(t_data *cordonnee);
+int interaction(t_data *cordonnee);
+int game_loop(t_data *cordonnee);
+int *print_game_board(t_data *cordonnee);
+void init_var(t_data *cordonnee);
+int verify_error(t_data *cordonnee);
 
 #endif

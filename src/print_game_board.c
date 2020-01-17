@@ -9,74 +9,38 @@
 #include <unistd.h>
 #include <stdio.h>
 #include "printf/my.h"
-int interaction2()
-{
-    char * buffer = NULL;
-    int fd = 0;
-    int save = 0;
 
-    buffer = malloc(sizeof(char) * 100);
-    my_printf("Matches: ");
-    fd = read(0, buffer, 256);
-    buffer[fd-1] = '\0';
-    save = my_getnbr(buffer);
-    free(buffer);
-    return (save);
-}
-
-int interaction(int params)
-{
-    char * buffer = NULL;
-    int fd = 0;
-    int save = 0;
-
-    buffer = malloc(sizeof(char) * 100);
-    my_printf("\nYour turn:\nLine: ");
-    fd = read(0, buffer, 256);
-    buffer[fd-1] = '\0';
-    save = my_getnbr(buffer);
-    free(buffer);
-    if (save > params) {
-        my_printf("Error: you cannot remove ");
-        my_printf("more than %d matches per turn", params);
-        interaction(params);
-    }
-    return (save);
-}
-
-int *print_game_board(int size)
+int *print_game_board(t_data *cordonnee)
 {
     int j = 0;
     int i = 0;
     int x = 0;
-    int *tab = NULL;
-    int size2 = size;
-    tab = malloc(sizeof(int) * size);
+    int size2 = cordonnee->size;
 
-    tab[0] = 1;
+    cordonnee->tab[0] = 1;
     i++;
 
-    while(i < size + 1) {
-        tab[i] = tab[i-1] + 2;
+    while(i < cordonnee->size + 1) {
+        cordonnee->tab[i] = cordonnee->tab[i-1] + 2;
         i++;
     }
     i = 0;
-    while(i < size*2+1) {
+    while(i < cordonnee->size*2+1) {
         my_printf("*");
         i++;
     }
     i = 0;
     my_printf("\n");
-    while(i < size) {
-        x = size * 2 - 1;
+    while(i < cordonnee->size) {
+        x = cordonnee->size * 2 - 1;
         my_printf("*");
-        while(tab[size2] > j+size2+2) {
+        while(cordonnee->tab[size2] > j+size2+2) {
             my_printf(" ");
             j++;
             x--;
         }
         j = 0;
-        while(tab[i] > j) {
+        while(cordonnee->tab[i] > j) {
             my_printf("|");
             j++;
             x--;
@@ -90,23 +54,9 @@ int *print_game_board(int size)
         size2--;
     }
     i = 0;
-    while(i < size * 2 + 1) {
+    while(i < cordonnee->size * 2 + 1) {
         my_printf("*");
         i++;
     }
-    return (tab);
-}
-
-int main(int ac, char **argv)
-{
-    int size = my_getnbr(argv[1]);
-    int params = my_getnbr(argv[2]);
-    int Matches = 0;
-    int Lines = 0;
-
-    if (ac < 3 || ac > 3)
-        return (84);
-    print_game_board(size);
-    Lines = interaction(params);
-    Matches = interaction2();
+    return (cordonnee->tab);
 }

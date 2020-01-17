@@ -29,6 +29,13 @@ SRC =	src/printf/my_putchar.c \
 		src/printf/my_put_hexa_min.c \
 		src/printf/my_put_binary.c \
 		src/print_game_board.c \
+		src/error_managment.c	\
+        src/interaction.c	\
+		src/interaction2.c \
+		src/main.c \
+		src/verify_error.c	\
+		src/game_loop.c \
+		src/init_var.c
 
 OBJ	=	$(SRC:.c=.o)
 
