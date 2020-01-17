@@ -13,11 +13,11 @@
 int main(int ac, char **argv)
 {
     t_data cordonnee;
-    cordonnee.size = my_getnbr(argv[1]);
-    cordonnee.params = my_getnbr(argv[2]);
 
     if (ac < 3 || ac > 3)
         return (84);
+    cordonnee.size = my_getnbr(argv[1]);
+    cordonnee.params = my_getnbr(argv[2]);
     init_var(&cordonnee);
     game_loop(&cordonnee);
 }

@@ -35,7 +35,8 @@ SRC =	src/printf/my_putchar.c \
 		src/main.c \
 		src/verify_error.c	\
 		src/game_loop.c \
-		src/init_var.c
+		src/init_var.c \
+		src/fill.c
 
 OBJ	=	$(SRC:.c=.o)
 

@@ -18,11 +18,7 @@ int interaction(t_data *cordonnee)
     fd = read(0, cordonnee->buffer, 256);
     cordonnee->buffer[fd-1] = '\0';
     cordonnee->save = my_getnbr(cordonnee->buffer);
-    free(cordonnee->buffer);
-    if (cordonnee->save > cordonnee->size) {
-        my_printf("Error: you cannot remove ");
-        my_printf("more than %d matches per turn", cordonnee->params);
-        interaction(cordonnee);
-    }
-    return (cordonnee->save);
+    if (error_management(cordonnee) == -1)
+        return (-1);
+    return (0);
 }

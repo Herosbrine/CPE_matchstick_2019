@@ -19,6 +19,7 @@ struct s_data {
     char *buffer2;
     int *tab;
     int save_2;
+    int *space;
 };
 
 //  EVAL_EXPR.C
@@ -64,6 +65,8 @@ int my_printf2(int *i, va_list paramsinfos, char const * format, ...);
 int my_put_hexa_min(unsigned nbr);
 int my_put_binary(unsigned int nbr);
 void info_file(char *filepath);
+
+//Programs
 int error_management(t_data *cordonnee);
 int interaction2(t_data *cordonnee);
 int interaction(t_data *cordonnee);
@@ -71,5 +74,7 @@ int game_loop(t_data *cordonnee);
 int *print_game_board(t_data *cordonnee);
 void init_var(t_data *cordonnee);
 int verify_error(t_data *cordonnee);
+int error_management2(t_data *cordonnee);
+void fill(t_data *cordonnee);
 
 #endif

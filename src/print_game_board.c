@@ -17,13 +17,6 @@ int *print_game_board(t_data *cordonnee)
     int x = 0;
     int size2 = cordonnee->size;
 
-    cordonnee->tab[0] = 1;
-    i++;
-
-    while(i < cordonnee->size + 1) {
-        cordonnee->tab[i] = cordonnee->tab[i-1] + 2;
-        i++;
-    }
     i = 0;
     while(i < cordonnee->size*2+1) {
         my_printf("*");
@@ -34,7 +27,7 @@ int *print_game_board(t_data *cordonnee)
     while(i < cordonnee->size) {
         x = cordonnee->size * 2 - 1;
         my_printf("*");
-        while(cordonnee->tab[size2] > j+size2+2) {
+        while(cordonnee->space[i] > j) {
             my_printf(" ");
             j++;
             x--;

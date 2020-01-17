@@ -10,12 +10,40 @@
 #include <stdio.h>
 #include "printf/my.h"
 
+int check_map(t_data *cordonnee)
+{
+    int i = 0;
+
+    while(i < cordonnee->size + 1) {
+        if (i > 1)
+            return (0);
+        i++;
+    }
+    return (-1);
+}
+
+void manage_stick(t_data *cordonnee)
+{
+    int i = 0;
+
+    while (i < cordonnee->size + 1) {
+        if (i == cordonnee->save - 1) {
+            cordonnee->tab[i] -= cordonnee->save_2;
+            break;
+        }
+        i++;
+    }
+}
+
 int game_loop(t_data *cordonnee)
 {
-    cordonnee->tab = print_game_board(cordonnee);
+    fill(cordonnee);
+    //cordonnee->tab = print_game_board(cordonnee);
     my_printf("\nYour turn:");
-    //verify_error(cordonnee);
-    cordonnee->Lines = interaction(cordonnee);
-    cordonnee->matches = interaction2(cordonnee);
+    while (check_map(cordonnee) == 0) {
+        verify_error(cordonnee);
+        manage_stick(cordonnee);
+        print_game_board(cordonnee);
+    }
     return (0);
 }

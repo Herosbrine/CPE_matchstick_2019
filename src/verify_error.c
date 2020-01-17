@@ -12,10 +12,13 @@
 
 int verify_error(t_data *cordonnee)
 {
-    int bol_lines = 0;
-    int bol_matches = 0;
+    int bol_lines = 1;
+    int bol_matches = 1;
 
-    while (bol_lines != 1 || bol_matches != 1)
-        bol_lines = error_management(cordonnee);
+    while (bol_lines != 0 || bol_matches != 0) {
+        bol_lines = interaction(cordonnee);
+        if (bol_lines == 0)
+            bol_matches = interaction2(cordonnee);
+    }
     return(0);
 }
