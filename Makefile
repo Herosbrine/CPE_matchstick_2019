@@ -41,6 +41,7 @@ SRC =	src/printf/my_putchar.c \
 		src/manage_stick.c \
 		src/end_game.c \
 		src/move_p.c \
+		src/move_ia.c \
 
 
 OBJ	=	$(SRC:.c=.o)

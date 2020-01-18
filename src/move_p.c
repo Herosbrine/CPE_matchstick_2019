@@ -16,6 +16,5 @@ void move_p(t_data *cordonnee)
         my_printf("Player removed %d match(es)"\
         " from line %d\n", cordonnee->save_2, cordonnee->save);
         print_game_board(cordonnee);
-        my_printf("\n\nYour turn:\n");
     }
 }

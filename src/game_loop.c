@@ -18,6 +18,7 @@ int game_loop(t_data *cordonnee)
         end_game(cordonnee);
         verify_error(cordonnee);
         move_p(cordonnee);
+        move_ia(cordonnee);
     }
     return (0);
 }

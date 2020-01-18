@@ -17,6 +17,6 @@ void end_game(t_data *cordonnee)
         " from line %d\n", cordonnee->save_2, cordonnee->save);
         print_game_board(cordonnee);
         my_printf("\nYou lost, too bad...");
-        exit(1);
+        exit(2);
     }
 }
