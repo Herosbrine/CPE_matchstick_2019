@@ -42,7 +42,7 @@ int *print_game_board(t_data *cordonnee)
     int x = 0;
 
     i = 0;
-    while(i < cordonnee->size * 2 + 1) {
+    while (i < cordonnee->size * 2 + 1) {
         my_printf("*");
         i++;
     }
