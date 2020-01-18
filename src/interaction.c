@@ -14,7 +14,7 @@ int interaction(t_data *cordonnee)
 {
     int fd = 0;
 
-    my_printf("\nLines: ");
+    my_printf("Lines: ");
     fd = read(0, cordonnee->buffer, 256);
     cordonnee->buffer[fd-1] = '\0';
     cordonnee->save = my_getnbr(cordonnee->buffer);

@@ -8,6 +8,7 @@
 #ifndef MY_H_
 #define MY_H_
 #include <stdarg.h>
+
 typedef struct s_data t_data;
 struct s_data {
     int size;
