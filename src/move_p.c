@@ -10,11 +10,22 @@
 #include <stdio.h>
 #include "printf/my.h"
 
-void move_p(t_data *cordonnee)
+void print_move_p(t_data *cordonnee)
 {
-    if (manage_stick(cordonnee) != 1 && check_map(cordonnee) != -1) {
+    while (manage_stick(cordonnee) == 1) {
+        my_printf("Error: not enough matches on this line\n");
+        verify_error(cordonnee);
+    }
+    if (check_map(cordonnee) != -1) {
         my_printf("Player removed %d match(es)"\
         " from line %d\n", cordonnee->save_2, cordonnee->save);
         print_game_board(cordonnee);
+    }
+    if (check_map(cordonnee) == -1 ) {
+        my_printf("Player removed %d match(es)"\
+          " from line %d\n", cordonnee->save_2, cordonnee->save);
+        print_game_board(cordonnee);
+        my_printf("\nYou lost, too bad...\n");
+        exit(2);
     }
 }

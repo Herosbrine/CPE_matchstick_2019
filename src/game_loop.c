@@ -15,9 +15,8 @@ int game_loop(t_data *cordonnee)
     fill(cordonnee);
     my_printf("\n\nYour turn:\n");
     while (1) {
-        end_game(cordonnee);
         verify_error(cordonnee);
-        move_p(cordonnee);
+        print_move_p(cordonnee);
         move_ia(cordonnee);
     }
     return (0);

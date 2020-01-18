@@ -21,7 +21,6 @@ int manage_stick(t_data *cordonnee)
                 return (0);
             }
             else {
-                my_printf("Error: not enough matches on this line\n");
                 return (1);
             }
         }
