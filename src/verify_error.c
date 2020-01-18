@@ -20,5 +20,5 @@ int verify_error(t_data *cordonnee)
         if (bol_lines == 0)
             bol_matches = interaction2(cordonnee);
     }
-    return(0);
+    return (0);
 }

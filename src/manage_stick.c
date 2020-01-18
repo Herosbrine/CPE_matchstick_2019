@@ -20,9 +20,8 @@ int manage_stick(t_data *cordonnee)
                 cordonnee->tab[i] -= cordonnee->save_2;
                 return (0);
             }
-            else {
+            else
                 return (1);
-            }
         }
         i++;
     }

@@ -18,8 +18,7 @@ int interaction2(t_data *cordonnee)
     fd = read(0, cordonnee->buffer2, 256);
     cordonnee->buffer2[fd-1] = '\0';
     cordonnee->save_2 = my_getnbr(cordonnee->buffer2);
-    if (error_management2(cordonnee) == -1) {
-        return(-1);
-    }
+    if (error_management2(cordonnee) == -1)
+        return (-1);
     return (0);
 }
