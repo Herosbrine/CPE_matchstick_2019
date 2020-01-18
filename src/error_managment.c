@@ -21,7 +21,7 @@ int error_management(t_data *cordonnee)
         return (-1);
     }
     if (cordonnee->save > cordonnee->size || cordonnee->save == 0) {
-        my_printf("this line is out of range\n");
+        my_printf("Error: this line is out of range\n");
         return (-1);
     }
     return (1);
