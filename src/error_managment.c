@@ -29,6 +29,10 @@ int error_management(t_data *cordonnee)
 
 int error_management2(t_data *cordonnee)
 {
+    if (my_getnbr(cordonnee->buffer2) == 84) {
+        my_printf("Error: invalid input (positive number expected)\n");
+        return (-1);
+    }
     if (cordonnee->save_2 > cordonnee->params) {
         my_printf("Error: you cannot remove ");
         my_printf("more than %d matches per turn\n", cordonnee->params);
@@ -38,7 +42,7 @@ int error_management2(t_data *cordonnee)
         my_printf("Error: you have to remove at least one match\n");
         return (-1);
     }
-    if (my_getnbr(cordonnee->buffer2) == 84) {
+    if (cordonnee->save_2 < 0) {
         my_printf("Error: invalid input (positive number expected)\n");
         return (-1);
     }

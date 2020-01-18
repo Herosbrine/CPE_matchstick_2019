@@ -36,7 +36,12 @@ SRC =	src/printf/my_putchar.c \
 		src/verify_error.c	\
 		src/game_loop.c \
 		src/init_var.c \
-		src/fill.c
+		src/fill.c \
+		src/check_map.c \
+		src/manage_stick.c \
+		src/end_game.c \
+		src/move_p.c \
+
 
 OBJ	=	$(SRC:.c=.o)
 
