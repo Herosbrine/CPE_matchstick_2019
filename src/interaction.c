@@ -12,13 +12,15 @@
 
 int interaction(t_data *cordonnee)
 {
-    int fd = 0;
+    size_t sizeb = 1000;
 
-    my_printf("Lines: ");
-    fd = read(0, cordonnee->buffer, 256);
-    if (fd == 0)
+    my_printf("Line: ");
+    if (getline(&cordonnee->buffer, &sizeb, stdin) == -1)
         return (84);
-    cordonnee->buffer[fd-1] = '\0';
+    for (int i = 0; cordonnee->buffer[i] != '\0'; i++) {
+        if (cordonnee->buffer[i] == '\n')
+            cordonnee->buffer[i] = '\0';
+    }
     cordonnee->save = my_getnbr(cordonnee->buffer);
     if (error_management(cordonnee) == -1)
         return (-1);
