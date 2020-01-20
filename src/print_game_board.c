@@ -10,22 +10,27 @@
 #include <stdio.h>
 #include "printf/my.h"
 
+void print_game_space2(int *j, int *x, int *i, t_data *cordonnee)
+{
+    while (cordonnee->space[*i] > *j) {
+        my_printf(" ");
+        (*j)++;
+        (*x)--;
+    }
+    *j = 0;
+    while (cordonnee->tab[*i] > *j) {
+        my_printf("|");
+        (*j)++;
+        (*x)--;
+    }
+}
+
 void print_game_space(int *j, int *x, int *i, t_data *cordonnee)
 {
     while (*i < cordonnee->size) {
         *x = cordonnee->size * 2 - 1;
         my_printf("*");
-        while (cordonnee->space[*i] > *j) {
-            my_printf(" ");
-            (*j)++;
-            (*x)--;
-        }
-        *j = 0;
-        while (cordonnee->tab[*i] > *j) {
-            my_printf("|");
-            (*j)++;
-            (*x)--;
-        }
+        print_game_space2(j, x, i, cordonnee);
         *j = 0;
         for (int k = 0; k < *x; k++)
             my_printf(" ");
