@@ -19,6 +19,8 @@ int verify_error(t_data *cordonnee)
         bol_lines = interaction(cordonnee);
         if (bol_lines == 0)
             bol_matches = interaction2(cordonnee);
+        if (bol_lines == 84 || bol_matches == 84)
+            return (84);
     }
     return (0);
 }

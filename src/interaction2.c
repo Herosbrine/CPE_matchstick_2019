@@ -16,8 +16,8 @@ int interaction2(t_data *cordonnee)
 
     my_printf("Matches: ");
     fd = read(0, cordonnee->buffer2, 256);
-    if (fd == -1)
-        exit (84);
+    if (fd == 0)
+        return (84);
     cordonnee->buffer2[fd-1] = '\0';
     cordonnee->save_2 = my_getnbr(cordonnee->buffer2);
     if (error_management2(cordonnee) == -1)

@@ -16,8 +16,8 @@ int interaction(t_data *cordonnee)
 
     my_printf("Lines: ");
     fd = read(0, cordonnee->buffer, 256);
-    if (fd == -1)
-        exit (84);
+    if (fd == 0)
+        return (84);
     cordonnee->buffer[fd-1] = '\0';
     cordonnee->save = my_getnbr(cordonnee->buffer);
     if (error_management(cordonnee) == -1)

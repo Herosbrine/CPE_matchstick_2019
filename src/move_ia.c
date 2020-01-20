@@ -44,7 +44,7 @@ int move_ia1(int *x, int *i, int *count, t_data *cordonnee)
     return (0);
 }
 
-void check_end(int *x, int *i, t_data *cordonnee)
+int check_end(int *x, int *i, t_data *cordonnee)
 {
     if (check_map(cordonnee) != -1 ) {
         my_printf("\n\nAI's turn...\n");
@@ -57,9 +57,11 @@ void check_end(int *x, int *i, t_data *cordonnee)
         my_printf("AI removed %d match(es) from line %d\n", *x, *i);
         print_game_board(cordonnee);
         my_printf("\nI lost... snif... but I'll get you next time!!\n");
-        exit (1);
+        return (1);
     }
+    return (0);
 }
+
 int move_ia(t_data *cordonnee)
 {
     int i = 0;
@@ -80,6 +82,7 @@ int move_ia(t_data *cordonnee)
             i++;
     }
     i++;
-    check_end(&x, &i, cordonnee);
+    if (check_end(&x, &i, cordonnee) == 1)
+        return (1);
     return (0);
 }

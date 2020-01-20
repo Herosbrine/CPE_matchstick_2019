@@ -80,7 +80,7 @@ void fill(t_data *cordonnee);
 int check_map(t_data *cordonnee);
 int manage_stick(t_data *cordonnee);
 void end_game(t_data *cordonnee);
-void print_move_p(t_data *cordonnee);
+int print_move_p(t_data *cordonnee);
 int move_ia(t_data *cordonnee);
 
 #endif
