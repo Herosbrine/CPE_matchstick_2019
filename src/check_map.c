@@ -17,12 +17,12 @@ int check_map(t_data *cordonnee)
 
     while (x < cordonnee->size + 1) {
         if (x == cordonnee->size)
-            return(-1);
+            return (-1);
         if (cordonnee->tab[i] == 0)
             x++;
         if  (cordonnee->tab[i] != 0)
-            return(0);
+            return (0);
         i++;
     }
-    return(0);
+    return (0);
 }

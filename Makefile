@@ -39,7 +39,6 @@ SRC =	src/printf/my_putchar.c \
 		src/fill.c \
 		src/check_map.c \
 		src/manage_stick.c \
-		src/end_game.c \
 		src/move_p.c \
 		src/move_ia.c \
 

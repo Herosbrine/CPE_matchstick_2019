@@ -46,13 +46,13 @@ int move_ia1(int *x, int *i, int *count, t_data *cordonnee)
 
 int check_end(int *x, int *i, t_data *cordonnee)
 {
-    if (check_map(cordonnee) != -1 ) {
+    if (check_map(cordonnee) != -1) {
         my_printf("\n\nAI's turn...\n");
         my_printf("AI removed %d match(es) from line %d\n", *x, *i);
         print_game_board(cordonnee);
         my_printf("\n\nYour turn:\n");
     }
-    if (check_map(cordonnee) == -1 ) {
+    if (check_map(cordonnee) == -1) {
         my_printf("\n\nAI's turn...\n");
         my_printf("AI removed %d match(es) from line %d\n", *x, *i);
         print_game_board(cordonnee);

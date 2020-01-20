@@ -19,7 +19,6 @@ void init_var(t_data *cordonnee)
     cordonnee->buffer2 = NULL;
     cordonnee->tab = NULL;
     cordonnee->save_2 = 0;
-
     cordonnee->tab = malloc(sizeof(int) * cordonnee->size);
     cordonnee->space = malloc(sizeof(int) * cordonnee->size);
     cordonnee->buffer = malloc(sizeof(char) * 100);
