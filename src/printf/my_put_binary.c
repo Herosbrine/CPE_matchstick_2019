@@ -13,7 +13,6 @@
 int my_put_binary(unsigned int nbr)
 {
     unsigned int binaryNum[100];
-
     unsigned int i = 0;
 
     while (nbr > 0) {

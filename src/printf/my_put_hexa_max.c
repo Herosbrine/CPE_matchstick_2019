@@ -12,8 +12,8 @@ int my_put_hexa(unsigned nbr)
     long quotient = 0;
     int i = 1, j, temp;
     char hexadecimalNumber[100];
-    quotient = nbr;
 
+    quotient = nbr;
     while (quotient != 0) {
         temp = quotient % 16;
         if ( temp < 10)

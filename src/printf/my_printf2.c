@@ -25,7 +25,7 @@ int my_printf2(int *i, va_list paramsinfos, char const * format, ...)
             my_putchar(format[*i]);
             (*i)++;
         }
-        exit( EXIT_SUCCESS );
+        return (1);
     }
     while (format[*i] >= '0' && format[*i] <= '9') {
         my_put_space(*i, format);
