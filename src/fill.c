@@ -14,9 +14,10 @@ void fill_space(t_data *cordonnee)
 {
     int i = 0;
 
+    cordonnee->space = malloc(sizeof(int) * (cordonnee->size + 1));
     cordonnee->space[0] = cordonnee->size - 1;
     i++;
-    while (i < cordonnee->size + 1) {
+    while (i < cordonnee->size) {
         cordonnee->space[i] = cordonnee->space[i-1] - 1;
         i++;
     }

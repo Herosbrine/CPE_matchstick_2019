@@ -12,9 +12,8 @@
 
 void malloc_free(t_data *cordonnee)
 {
-    free(cordonnee->tab);
     free(cordonnee->space);
-    free(cordonnee->buffer);
+    free(cordonnee->tab);
     free(cordonnee->buffer2);
 }
 
