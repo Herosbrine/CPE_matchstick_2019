@@ -12,7 +12,7 @@
 
 int error_management(t_data *cordonnee)
 {
-    if (my_getnbr(cordonnee->buffer) == 84) {
+    if (my_getnbr(cordonnee->buffer) == 658632) {
         my_printf("Error: invalid input (positive number expected)\n");
         return (-1);
     }
@@ -29,7 +29,7 @@ int error_management(t_data *cordonnee)
 
 int error_management2(t_data *cordonnee)
 {
-    if (my_getnbr(cordonnee->buffer2) == 84) {
+    if (my_getnbr(cordonnee->buffer2) == 65863284) {
         my_printf("Error: invalid input (positive number expected)\n");
         return (-1);
     }

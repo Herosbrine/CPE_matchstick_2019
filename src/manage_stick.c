@@ -10,24 +10,19 @@
 #include <stdio.h>
 #include "printf/my.h"
 
-int manage_stick2(int i, t_data *cordonnee)
-{
-    if (cordonnee->tab[i] >= cordonnee->save_2) {
-        cordonnee->tab[i] -= cordonnee->save_2;
-        return (0);
-    }
-    else
-        return (1);
-}
-
 int manage_stick(t_data *cordonnee)
 {
     int i = 0;
 
     while (i < cordonnee->size + 1) {
-        if (i == cordonnee->save - 1) {
-            manage_stick2(i, cordonnee);
+        if ((i == cordonnee->save - 1)
+        && (cordonnee->tab[i] >= cordonnee->save_2)) {
+            cordonnee->tab[i] -= cordonnee->save_2;
+            return (0);
         }
+        if ((i == cordonnee->save - 1)
+        && (!(cordonnee->tab[i] >= cordonnee->save_2)))
+            return (1);
         i++;
     }
     return (0);

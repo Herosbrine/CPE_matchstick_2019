@@ -19,7 +19,8 @@ int main(int ac, char **argv)
         return (84);
     cordonnee.size = my_getnbr(argv[1]);
     cordonnee.params = my_getnbr(argv[2]);
-    if (cordonnee.size <= 0 || cordonnee.params <= 0)
+    if (cordonnee.size <= 0 || cordonnee.params <= 0 ||
+        cordonnee.params > 21470000 || cordonnee.size > 10000)
         return (84);
     init_var(&cordonnee);
     game_stat = game_loop(&cordonnee);
