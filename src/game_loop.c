@@ -20,7 +20,6 @@ int game_loop(t_data *cordonnee)
         if (print_move_p(cordonnee) == 2)
             return (2);
         if (move_ia(cordonnee) == 1) {
-            malloc_free(cordonnee);
             return (1);
         }
     }

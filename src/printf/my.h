@@ -82,6 +82,5 @@ int manage_stick(t_data *cordonnee);
 void end_game(t_data *cordonnee);
 int print_move_p(t_data *cordonnee);
 int move_ia(t_data *cordonnee);
-void malloc_free(t_data *cordonnee);
 
 #endif
