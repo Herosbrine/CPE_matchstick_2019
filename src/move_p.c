@@ -15,6 +15,7 @@ int print_move_p(t_data *cordonnee)
     while (manage_stick(cordonnee) == 1) {
         my_printf("Error: not enough matches on this line\n");
         verify_error(cordonnee);
+        return (0);
     }
     if (check_map(cordonnee) != -1) {
         my_printf("Player removed %d match(es)"\
