@@ -17,8 +17,10 @@ int game_loop(t_data *cordonnee)
     while (1) {
         if (verify_error(cordonnee) == 84)
             return (84);
-        if (print_move_p(cordonnee) == 2)
+        if (print_move_p(cordonnee) == 2) {
+            malloc_free(cordonnee);
             return (2);
+        }
         if (move_ia(cordonnee) == 1) {
             malloc_free(cordonnee);
             return (1);
