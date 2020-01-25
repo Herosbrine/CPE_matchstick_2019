@@ -12,14 +12,11 @@
 
 int print_move_p(t_data *cordonnee)
 {
-    int y = 0;
-
-    while (manage_stick(cordonnee) == 1) {
+    for (int y = 0; manage_stick(cordonnee) == 1; y++){
         my_printf("Error: not enough matches on this line\n");
         verify_error(cordonnee);
-        y++;
         if (y == 5000)
-            exit (0);
+            return (2);
     }
     if (check_map(cordonnee) != -1) {
         my_printf("Player removed %d match(es)"\
