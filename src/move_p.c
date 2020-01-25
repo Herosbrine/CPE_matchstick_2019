@@ -12,7 +12,7 @@
 
 int print_move_p(t_data *cordonnee)
 {
-    for (int y = 0; manage_stick(cordonnee) == 1; y++){
+    for (int y = 0; manage_stick(cordonnee) == 1; y++) {
         my_printf("Error: not enough matches on this line\n");
         verify_error(cordonnee);
         if (y == 5000)
